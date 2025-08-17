@@ -1,3 +1,5 @@
+// backend\controllers\memberController.js
+
 const Member = require('../models/Member');
 const { sendWhatsAppReminder } = require('../services/whatsappService');
 
@@ -25,7 +27,7 @@ const createMember = async (req, res) => {
 const getMembers = async (req, res) => {
   try {
     const { page = 1, limit = 10, search, status } = req.query;
-    const query = { isActive: true };
+    const query = { isActive: true, createdBy: req.user._id };
 
     // Search 
     if (search) {
@@ -87,7 +89,10 @@ const getMembers = async (req, res) => {
 
 const getMemberById = async (req, res) => {
   try {
-    const member = await Member.findById(req.params.id).populate('createdBy', 'name email');
+    const member = await Member.findOne({
+      _id: req.params.id,
+      createdBy: req.user._id
+    }).populate('createdBy', 'name email');
 
     if (!member || !member.isActive) {
       return res.status(404).json({ message: 'Member not found' });
@@ -104,8 +109,8 @@ const updateMember = async (req, res) => {
   try {
     const { fullName, age, contactNumber, joinDate, subscriptionEndDate } = req.body;
 
-    const member = await Member.findByIdAndUpdate(
-      req.params.id,
+    const member = await Member.findOneAndUpdate(
+      { _id: req.params.id, createdBy: req.user._id },
       { fullName, age, contactNumber, joinDate, subscriptionEndDate },
       { new: true, runValidators: true }
     );
@@ -123,8 +128,8 @@ const updateMember = async (req, res) => {
 
 const deleteMember = async (req, res) => {
   try {
-    const member = await Member.findByIdAndUpdate(
-      req.params.id,
+    const member = await Member.findOneAndUpdate(
+      { _id: req.params.id, createdBy: req.user._id },
       { isActive: false },
       { new: true }
     );
@@ -142,7 +147,10 @@ const deleteMember = async (req, res) => {
 
 const sendReminder = async (req, res) => {
   try {
-    const member = await Member.findById(req.params.id);
+    const member = await Member.findOne({
+      _id: req.params.id,
+      createdBy: req.user._id
+    });
 
     if (!member || !member.isActive) {
       return res.status(404).json({ message: 'Member not found' });
@@ -175,6 +183,7 @@ const getExpiringMembers = async (req, res) => {
 
     const expiringMembers = await Member.find({
       isActive: true,
+      createdBy: req.user._id,
       subscriptionEndDate: { $gte: today, $lte: threeDaysFromNow }
     }).sort({ subscriptionEndDate: 1 });
 

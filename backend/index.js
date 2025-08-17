@@ -18,11 +18,16 @@ connectDB();
 // Middleware
 app.use(helmet());
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? ['https://member-manager-client.vercel.app'] 
-    : ['http://localhost:5173', 'http://localhost:3000'],
+  origin: true,
   credentials: true
 }));
+
+// app.use(cors({
+//   origin: process.env.NODE_ENV === 'production' 
+//     ? ['https://member-manager-client.vercel.app'] 
+//     : ['http://localhost:5173', 'http://localhost:3000'],
+//   credentials: true
+// }));
 
 // Rate limiting
 const limiter = rateLimit({

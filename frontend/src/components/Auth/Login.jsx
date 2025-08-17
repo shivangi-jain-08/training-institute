@@ -76,10 +76,10 @@ const Login = () => {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl mb-4 shadow-large">
               <Sparkles className="h-8 w-8 text-white" />
             </div>
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-primary-600 to-primary-800 dark:from-primary-400 dark:to-primary-300 bg-clip-text text-transparent">
               Institute Manager
             </h1>
-            <p className="text-gray-500 mt-2">
+            <p className="text-secondary-600 dark:text-secondary-400 mt-2">
               {isRegistering
                 ? "Create your account"
                 : "Welcome back! Please sign in"}
@@ -168,11 +168,11 @@ const Login = () => {
             <form onSubmit={handleRegisterSubmit} className="space-y-6">
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2">
                     Full Name
                   </label>
                   <div className="relative group">
-                    <User className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5 group-focus-within:text-primary-500 transition-colors" />
+                    <User className="absolute left-4 top-1/2 transform -translate-y-1/2 text-secondary-400 dark:text-secondary-500 h-5 w-5 group-focus-within:text-primary-500 transition-colors" />
                     <input
                       type="text"
                       name="name"
@@ -186,11 +186,11 @@ const Login = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2">
                     Email Address
                   </label>
                   <div className="relative group">
-                    <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5 group-focus-within:text-primary-500 transition-colors" />
+                    <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-secondary-400 dark:text-secondary-500 h-5 w-5 group-focus-within:text-primary-500 transition-colors" />
                     <input
                       type="email"
                       name="email"
@@ -204,11 +204,11 @@ const Login = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2">
                     Password
                   </label>
                   <div className="relative group">
-                    <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5 group-focus-within:text-primary-500 transition-colors" />
+                    <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 text-secondary-400 dark:text-secondary-500 h-5 w-5 group-focus-within:text-primary-500 transition-colors" />
                     <input
                       type="password"
                       name="password"
@@ -223,11 +223,11 @@ const Login = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2">
                     Confirm Password
                   </label>
                   <div className="relative group">
-                    <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5 group-focus-within:text-primary-500 transition-colors" />
+                    <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 text-secondary-400 dark:text-secondary-500 h-5 w-5 group-focus-within:text-primary-500 transition-colors" />
                     <input
                       type="password"
                       name="confirmPassword"
@@ -263,7 +263,7 @@ const Login = () => {
             <button
               type="button"
               onClick={() => setIsRegistering(!isRegistering)}
-              className="text-primary-600 hover:text-primary-700 font-medium transition-colors"
+              className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors"
             >
               {isRegistering
                 ? "Already have an account? Sign in"

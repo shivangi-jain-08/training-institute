@@ -214,7 +214,7 @@ const Dashboard = () => {
           
           <Link 
             to="/members/add"
-            className="group flex items-center space-x-4 p-5 border border-secondary-200 dark:border-secondary-700 rounded-xl hover:bg-gradient-to-r hover:from-success-50 hover:to-success-100 dark:hover:from-success-950/20 dark:hover:to-success-900/20 hover:border-success-200 dark:hover:border-success-800 transition-all duration-200 hover:shadow-soft dark:hover:shadow-soft-dark"
+            className="group flex items-center space-x-4 p-5 border border-secondary-200 dark:border-secondary-700 rounded-xl hover:bg-gradient-to-r hover:from-success-50 hover:to-success-100 dark:hover:from-success-900/20 dark:hover:to-success-900/20 hover:border-success-200 dark:hover:border-success-800 transition-all duration-200 hover:shadow-soft dark:hover:shadow-soft-dark"
           >
             <div className="w-12 h-12 bg-gradient-to-br from-success-500 to-success-600 rounded-xl flex items-center justify-center shadow-soft dark:shadow-soft-dark group-hover:scale-110 transition-transform duration-200">
               <UserPlus className="h-6 w-6 text-white" />
