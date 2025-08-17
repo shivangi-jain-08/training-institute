@@ -1,4 +1,4 @@
-# 🎓 Institute Manager
+# 🏢 Institute Manager
 
 A web application for educational institutes to manage members and send automated WhatsApp subscription reminders.
 
@@ -13,8 +13,8 @@ A web application for educational institutes to manage members and send automate
 
 ## 🌐 Live Demo
 
-**Frontend:** [https://your-app.vercel.app](https://your-app.vercel.app)  
-**Backend API:** [https://your-api.railway.app](https://your-api.railway.app)
+**Frontend:** [https://member-manager-client.vercel.app](https://member-manager-client.vercel.app)  
+**Backend API:** [https://institute-manager-tan.vercel.app](https://institute-manager-tan.vercel.app)
 
 ## ✨ Key Features
 
