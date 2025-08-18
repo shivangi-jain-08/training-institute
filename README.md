@@ -5,7 +5,7 @@ A web application for educational institutes to manage members and send automate
 ## 🚨 Important: WhatsApp Setup Required
 
 **To receive WhatsApp reminders, you must join the Twilio Sandbox:**
-1. Send **`join bear-death`** to **+1 415 523 8886** from your WhatsApp
+1. Send **`join bear-death`** to **+1 415 523 8886** from your WhatsApp (Member's Whatsapp Account)
 2. You'll receive a confirmation message
 3. Now you can receive reminders from the application
 
